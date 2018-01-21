@@ -27,6 +27,10 @@ class ViewController: UIViewController {
         imageView.image = UIImage.init(named: ballArray[randomBallNumber])
     }
     
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        newBallImage()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
