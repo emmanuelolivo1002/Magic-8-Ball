@@ -14,18 +14,23 @@ class ViewController: UIViewController {
     
     var randomBallNumber = 0
     
+   
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func askButtonPressed(_ sender: Any) {
-        
+        newBallImage()
+    }
+    
+    func newBallImage() {
+        randomBallNumber = Int(arc4random_uniform(4))
+        imageView.image = UIImage.init(named: ballArray[randomBallNumber])
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        randomBallNumber = Int(arc4random_uniform(4))
-        imageView.image = UIImage.init(named: ballArray[randomBallNumber])
+        newBallImage()
     }
 
     override func didReceiveMemoryWarning() {
